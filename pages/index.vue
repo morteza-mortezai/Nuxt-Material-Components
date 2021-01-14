@@ -1,18 +1,20 @@
 <template>
     <div>
-       <cs v-model="sel" name="a" label="name"></cs> 
+       <text-input v-model="sel" label="label"></text-input>
        <br>
       
       {{sel}}
        <br>
-       <input type="text">
+      
+      <text-input v-model="sel" label="label"></text-input>
     </div>
 </template>
 <script>
 export default {
     data(){
         return{
-            sel:'+9812345'
+      
+            sel:'abc'
         }
     },
    

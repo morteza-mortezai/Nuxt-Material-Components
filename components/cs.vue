@@ -37,7 +37,7 @@
 export default {
   data() {
     return {
-      number: this.value,
+      number: null,
       list: null,
       selected: null,
       dropDownShow: false,
@@ -98,24 +98,31 @@ export default {
     handlelblclick() {
       this.$refs.txtinput.focus()
     },
-    find_country(){
-  this.selected = this.search()
+    find_country() {
+      this.selected = this.search()
       this.$emit('input', this.number)
       if (this.number) {
         this.$refs.txtinput.focus()
       }
-    }
+    },
   },
   mounted() {
     this.get_data()
   },
   watch: {
     number: function (newv, old) {
-    this.find_country()
+      this.find_country()
     },
-  
+    value:function(){
+      this.number=this.value
+    }
   },
-
+  // computed: {
+  //   a() {
+  //    alert('sdsfd')
+  //     return (this.number = this.value)
+  //   },
+  // },
   props: ['value', 'name', 'label'],
 }
 </script>
